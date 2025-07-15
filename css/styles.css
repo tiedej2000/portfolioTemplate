@@ -1,6 +1,7 @@
 :root {
   --black: rgb(3, 3, 3);
   --white: rgb(255,255,255);
+  --bg: rgb(8, 8, 8);
 }
 
 .main__wrapper {
@@ -9,7 +10,8 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: var(--white);
+  background-color: var(--bg);
+  position: relative;
 }
 
 .gallery__wrapper {
@@ -32,7 +34,7 @@
   max-height: 60vh;
 }
 .gallery__wrapper:has(img:hover) img:not(:hover) {
-  max-height: 4vh;
+  max-height: 5vh;
 }
 
 .fullscreen__image {
@@ -73,7 +75,39 @@
 .fullscreen__image .svg__wrapper svg {
   width: 30px;
   height: 30px;
+  fill: var(--white);
 }
 .fullscreen__image .svg__wrapper:hover {
   background: rgb(134, 134, 134);
+}
+
+.menu__bar {
+  position: absolute;
+  bottom: 3vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+  padding: 10px 10px;
+  border-radius: 50px;
+  background-color: oklch(92.494% 0.00011 271.152/0.4);
+  border: 1px solid oklch(100% 0.00011 271.152/0.7);
+}
+.menu__bar .inventory {
+  display: flex;
+  gap: 10px;
+}
+.menu__bar .inventory li svg {
+  fill: white;
+  padding: 5px;
+  border-radius: 50px;
+  border: 1px solid transparent;
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.menu__bar .inventory li svg:hover {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.6) 100%);
+  border: 1px solid oklch(100% 0.00011 271.152/0.7);
 }/*# sourceMappingURL=styles.css.map */

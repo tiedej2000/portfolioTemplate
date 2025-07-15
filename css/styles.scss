@@ -1,6 +1,7 @@
 :root{
     --black: rgb(3, 3, 3);
     --white: rgb(255,255,255);
+    --bg: rgb(8, 8, 8);
 }
 
 
@@ -10,7 +11,8 @@
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background-color: var(--white);
+    background-color: var(--bg);
+    position: relative;
 }
 
 .gallery__wrapper{
@@ -35,7 +37,7 @@
 
     &:has(img:hover) {
             img:not(:hover) {
-                max-height: 4vh;
+                max-height: 5vh;
             }
         }
 }
@@ -80,12 +82,47 @@
         svg{
             width: 30px;
             height: 30px;
+            fill: var(--white);
         }
 
         &:hover{
             background: rgb(134, 134, 134);
         }
     }
+}
 
-    
+// menu
+
+.menu__bar{
+    position: absolute;
+    bottom: 3vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    padding: 10px 10px;
+    border-radius: 50px;
+    background-color: oklch(92.494% 0.00011 271.152 / 0.4);
+    border: 1px solid oklch(100% 0.00011 271.152 / 0.7);
+
+    .inventory{
+        display: flex;
+        gap: 10px;
+
+        li svg{
+            fill: white;
+            padding: 5px;
+            border-radius: 50px;
+            border: 1px solid transparent;
+            width: 30px;
+            height: auto;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover{
+                background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.6) 100%);
+                border: 1px solid oklch(100% 0.00011 271.152 / 0.7);
+            }
+        }
+    }
 }
