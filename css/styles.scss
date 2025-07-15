@@ -109,20 +109,34 @@
         display: flex;
         gap: 10px;
 
-        li svg{
-            fill: white;
-            padding: 5px;
-            border-radius: 50px;
+        li{
             border: 1px solid transparent;
-            width: 30px;
-            height: auto;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            svg{
+                fill: white;
+                padding: 5px;
+                border-radius: 50px;
+                border: 1px solid transparent;
+                width: 30px;
+                height: auto;
+                cursor: pointer;
+            }
 
-            &:hover{
-                background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.6) 100%);
+            &:not(.active) svg:hover{
+                    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.6) 100%);
+                    border: 1px solid oklch(100% 0.00011 271.152 / 0.7);
+            }
+
+            &.active{
+                width: 100px;
+                background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.6) 100%);
+                border-radius: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 border: 1px solid oklch(100% 0.00011 271.152 / 0.7);
             }
         }
+
+        
     }
 }

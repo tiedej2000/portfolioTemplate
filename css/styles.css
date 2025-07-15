@@ -97,6 +97,9 @@
   display: flex;
   gap: 10px;
 }
+.menu__bar .inventory li {
+  border: 1px solid transparent;
+}
 .menu__bar .inventory li svg {
   fill: white;
   padding: 5px;
@@ -105,9 +108,17 @@
   width: 30px;
   height: auto;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
-.menu__bar .inventory li svg:hover {
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.6) 100%);
+.menu__bar .inventory li:not(.active) svg:hover {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.6) 100%);
+  border: 1px solid oklch(100% 0.00011 271.152/0.7);
+}
+.menu__bar .inventory li.active {
+  width: 100px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.6) 100%);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid oklch(100% 0.00011 271.152/0.7);
 }/*# sourceMappingURL=styles.css.map */
