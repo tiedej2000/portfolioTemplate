@@ -13,6 +13,15 @@
     width: 100vw;
     background-color: var(--bg);
     position: relative;
+
+    font-family: "Poppins", sans-serif;
+
+    &.darkmode{
+        --black: rgb(255, 255, 255);
+        --white: rgb(3, 3, 3);
+        --bg: rgb(255, 255, 255);
+    }
+
 }
 
 .gallery__wrapper {
@@ -133,6 +142,13 @@
     border-radius: 50px;
     background-color: oklch(92.494% 0.00011 271.152 / 0.4);
     border: 1px solid oklch(100% 0.00011 271.152 / 0.7);
+    display: flex;
+    flex-direction: column-reverse;
+
+    &.darkmode{
+        background-color: oklch(40% 0.00011 271.152 / 0.6); /* darker translucent background */
+        border: 1px solid oklch(70% 0.00011 271.152 / 0.9);
+    }
 
     .inventory{
         display: flex;
@@ -140,6 +156,10 @@
 
         li{
             border: 1px solid transparent;
+            width: auto;
+            transition: all 0.3s ease;
+            border-radius: 50px;
+
             svg{
                 fill: white;
                 padding: 5px;
@@ -163,9 +183,71 @@
                 justify-content: center;
                 align-items: center;
                 border: 1px solid oklch(100% 0.00011 271.152 / 0.7);
+                cursor: pointer;
             }
         }
+    }
 
-        
+    .expanded__inventory{
+        width: 200%;
+        position: relative;
+        transform: translateX(-25%);
+
+        .expanded__settings{
+            background-color: oklch(92.494% 0.00011 271.152 / 0.4);
+            border: 1px solid oklch(100% 0.00011 271.152 / 0.7);
+            position: absolute;
+            bottom: 30px;
+            padding: 10px 20px;
+            left: 0;
+            height: auto;
+            width: 100%;
+            border-radius: 10px;
+            transform: translateY(10px);
+            opacity: 0;
+            transition: all 0.3s ease;
+
+            font-size: 0.8rem;
+            color: var(--white);
+
+            &.active{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+    }
+}
+
+// darkmode
+
+.darkmode__wrapper{
+    position: absolute;
+    bottom: 3vh;
+    right: 3vh;
+    z-index: 20;
+    cursor: pointer;
+
+    .btn__wrapper{
+        display: grid;
+        place-content: center;
+        border: 1px solid oklch(100% 0.00011 271.152 / 0.7);
+        border-radius: 50px;
+        width: 40px;
+        height: auto;
+        padding: 20px;
+
+        background: url('../media/sun.svg') no-repeat 50% 50% oklch(92.494% 0.00011 271.152 / 0.4);
+        background-size: 50%;
+        transition: all 0.3s ease;
+
+        &:hover{
+            transform: rotate(45deg);
+        }
+
+        &.darkmode{
+            background: url('../media/moon.svg') no-repeat 50% 50% oklch(40% 0.00011 271.152 / 0.6);
+            background-size: 50%;
+            border: 1px solid oklch(70% 0.00011 271.152 / 0.9);
+        }
     }
 }

@@ -24,8 +24,31 @@ closeBtn.addEventListener('click', () =>{
 const inventoryItems = document.querySelectorAll('.inventory li')
 
 inventoryItems.forEach(item => {
-    item.addEventListener('click', () =>{
+    item.addEventListener('mouseenter', () =>{
         inventoryItems.forEach(i => {i.classList.remove('active')})
         item.classList.add('active')
     })
+})
+
+const settingsBtn = document.querySelector('.settings')
+const settingsMenu = document.querySelector('.expanded__settings')
+
+settingsBtn.addEventListener('mouseenter', () =>{
+    settingsMenu.classList.add('active')
+})
+
+settingsBtn.addEventListener('mouseleave', () =>{
+    settingsMenu.classList.remove('active')
+})
+ 
+//darkmode
+
+const darkModeBtn = document.querySelector('.btn__wrapper')
+const pageWrapper = document.querySelector('.main__wrapper')
+const menuBar = document.querySelector('.menu__bar')
+
+darkModeBtn.addEventListener('click', () => {
+    darkModeBtn.classList.toggle('darkmode')
+    pageWrapper.classList.toggle('darkmode')
+    menuBar.classList.toggle('darkmode')
 })
