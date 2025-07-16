@@ -218,6 +218,55 @@
     }
 }
 
+//logo
+
+.logo{
+    visibility: hidden;
+    position: fixed;
+    bottom: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10001;
+
+    transition: all 0.7s ease;
+
+    svg{
+        fill: var(--white);
+        height: 100%;
+        width: auto;
+    }
+
+    &.loaded{
+        bottom: -20px;
+        left: 60px;
+        height: 80px;
+        width: 80px;
+    }
+}
+
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.144);
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+    opacity: 1;
+    transition: all 0.3s;
+
+    &.loaded{
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
 // darkmode
 
 .darkmode__wrapper{

@@ -52,3 +52,17 @@ darkModeBtn.addEventListener('click', () => {
     pageWrapper.classList.toggle('darkmode')
     menuBar.classList.toggle('darkmode')
 })
+
+//loader
+document.addEventListener('DOMContentLoaded', () => {
+    const logoWrapper = document.querySelector('.logo')
+    const loaderWrapper = document.querySelector('.loader')
+
+    setTimeout(()=>{
+        logoWrapper.classList.add('loaded')
+    },1000)
+
+    setTimeout(()=>{
+        loaderWrapper.classList.add('loaded')
+    },1250)
+});
